@@ -4,3 +4,15 @@
 
 }
 
+.navbarIcon {
+
+    width: 50px;
+    box-shadow: 1px 1px 2px 2px black;
+    border-radius: 10px;
+}
+
+.navbar {
+
+  border-bottom: 2px solid black;
+
+}

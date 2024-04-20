@@ -78,7 +78,10 @@ class Controller extends BaseController
 
 
 
-           } elseif($dataUserNickname->user_nickname == $nickname && $dataUserPassword->user_password == $password)
+           } elseif($dataUserNickname->user_nickname == $nickname && $dataUserPassword->user_password == $password) {
+
+
+        
 
            Session(['sessionAccountUser' => $nickname]);
            Session(['sessionAccountGenderuser' => $sessionAccountGenderuser]);
@@ -91,7 +94,15 @@ class Controller extends BaseController
          
 
 
+        } else {
+
+            $error = true;
+
+            return view('welcome',['error' => $error]);
+
         }
+
+    }
 
        
 

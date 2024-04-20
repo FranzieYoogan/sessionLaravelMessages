@@ -47,10 +47,29 @@
           
             <!-- Submit button -->
             <button type="submit"  name="submit" data-mdb-ripple-init class="submitStyle btn btn-primary btn-block mb-4">Sign in</button>
-          
+            
+            @if(isset($error))
+
+            <div style="position: relative;">
+              <h1 class="errorStyles">INVALID CREDENTIALS <img class="errorIcon" src="{{asset('/img/icons/error.png')}}" alt=""></h1>
+            </div>
+            
+            <script>
+
+              setTimeout(() => {
+
+                window.location.href = 'http://127.0.0.1:8000/';
+
+              }, 2000);
+
+            </script>
+
+            @endif
           
             </div>
           </form>
+
+
 
         </section>
 

@@ -24,7 +24,7 @@
             @foreach ($usersMessages as $data)
 
             <div class="containerForBorder">
-                <h1 class="feddbackStyle">ALL FEEDBACK</h1>
+                <h1 class="feddbackStyle">FEEDBACK #{{$data->user_id}}</h1>
 
         
           
@@ -32,7 +32,7 @@
 
             <div>
                 <div class="contentMessage">
-                    <h1>Response By {{$data->user_nickname}} #{{$data->user_id}}</h1>
+                    <h1>Response By {{$data->user_nickname}} </h1>
                    
                     <h1 class="messageStyle">{{$data->user_message}}</h1>
                 </div>

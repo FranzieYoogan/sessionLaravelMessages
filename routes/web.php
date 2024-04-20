@@ -24,10 +24,20 @@ Route::get('/account', function () {
 });
 
 
+Route::get('/messages', function () {
+    return view('messages');
+});
+
+
 
 
 
 
 Route::post('/account', [Controller::class, 'login']);
+
+
+Route::post('/messages', [Controller::class, 'showMessages']);
+
+Route::get('/messages', [Controller::class, 'showMessages']);
 
 Route::get('/logout', [Controller::class, 'logout']);

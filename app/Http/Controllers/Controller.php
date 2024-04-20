@@ -115,6 +115,22 @@ class Controller extends BaseController
 
     }
 
+    public function showMessages(Request $request) {
+
+     
+            
+           
+
+            $usersMessages = DB::select('select * from user_chat');
+
+
+            return view('messages', ['usersMessages' => $usersMessages]);
+
+        
+
+
+    }
+
 
 
 }

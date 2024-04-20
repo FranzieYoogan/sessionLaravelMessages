@@ -1,0 +1,19 @@
+.containerForm {
+
+
+    display: flex;
+    justify-content: center;
+
+}
+
+.formItems {
+
+    margin-top: 4em;
+
+}
+
+.submitStyle {
+
+    width: 100%;
+
+}

@@ -66,6 +66,28 @@
     font-weight: 900;
 }
 
+.buttonMessageusStyle {
+
+        position: absolute;
+        right: 1%;
+        bottom: 0%;
+        border: 1px solid transparent;
+        box-shadow: 2px 2px 2px 2px black;
+        border-radius: 40px;
+        transition: 1s;
+    }
+
+    .sendStyle {
+
+        width: 20px;
+        height: 30px;
+    }
+
+    .buttonMessageusStyle:hover {
+
+        transform: scale(1.2);
+    }
+
 @media only screen and (width: 400px) {
 
     .titleMessageus {

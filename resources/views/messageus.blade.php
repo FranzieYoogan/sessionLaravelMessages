@@ -53,12 +53,15 @@ rel="stylesheet"
           
         <div data-mdb-input-init class="form-outline">
             <label class="labelText" id="labelText">Message</label>
-            <textarea class="textInputStyle form-control" name="textareaInput" id="textareaInput" rows="4"></textarea>
-          
+            <textarea class="textInputStyle form-control" name="textareaInput" id="textareaInput" rows="4" required></textarea>
+
           </div>    
 
+          <div style="position: relative">
 
- 
+          <button type="submit" class="buttonMessageusStyle" data-mdb-ripple-init><img class="sendStyle" src="{{asset('img/icons/send.png')}}" alt=""></button>
+      
+        </div>
 
         </form>
 

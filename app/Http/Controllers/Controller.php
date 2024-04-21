@@ -145,8 +145,28 @@ class Controller extends BaseController
     public function sendMessage(Request $request) {
 
         $textareaInput = $request->input('textareaInput');
+        $currentDate = date(DATE_RFC2822);
 
 
+        $sessionAccountUser = $request->session()->get('sessionAccountUser');
+        $sessionAccountGenderuser = $request->session()->get('sessionAccountGenderuser');
+
+          $valueInputOk =  addslashes($textareaInput);
+
+        if(isset($_POST['submit'])) {
+
+            $query = DB::insert("insert into user_chat (user_nickname,user_gender,user_message, user_date) values ('$sessionAccountUser','$sessionAccountGenderuser','$valueInputOk', '$currentDate')");
+
+
+
+            $successful = true;
+    
+            return view('messageus', ['query' => $query,'successful' => $successful]);
+
+
+        }
+
+ 
 
     }
 

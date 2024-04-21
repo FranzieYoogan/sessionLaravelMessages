@@ -59,7 +59,7 @@ rel="stylesheet"
 
           <div style="position: relative">
 
-          <button type="submit" class="buttonMessageusStyle" data-mdb-ripple-init><img class="sendStyle" src="{{asset('img/icons/send.png')}}" alt=""></button>
+          <button type="submit" name="submit" class="buttonMessageusStyle" data-mdb-ripple-init><img class="sendStyle" src="{{asset('img/icons/send.png')}}" alt=""></button>
       
         </div>
 

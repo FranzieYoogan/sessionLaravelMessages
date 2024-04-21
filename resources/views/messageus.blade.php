@@ -52,7 +52,7 @@ rel="stylesheet"
             
           
         <div data-mdb-input-init class="form-outline">
-            <label class="labelText" id="labelText">Message</label>
+            <label class="labelText" for="textareaInput" id="labelText">Message</label>
             <textarea class="textInputStyle form-control" name="textareaInput" id="textareaInput" rows="4" required></textarea>
 
           </div>    
@@ -65,6 +65,7 @@ rel="stylesheet"
 
         </form>
 
+      
 
         <script>
 
@@ -86,6 +87,30 @@ rel="stylesheet"
             
                 </script>
     </div>
+
+
+    @if(isset($successful))
+
+    <div style="position: relative">
+
+    
+    <h1 class="messagesMessage">MESSAGE SENT SUCCESSFULLY <img class="sucessIconStyle" src="{{asset('/img/icons/successful.png')}}" alt=""></h1>
+
+</div>
+
+    <script>
+
+     setTimeout(() => {
+
+        window.location.href = "http://127.0.0.1:8000/messageus";
+
+      },2000);
+
+    </script>
+
+  
+
+    @endif
 
     </section>
 

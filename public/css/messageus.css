@@ -77,6 +77,27 @@
         transition: 1s;
     }
 
+    .sucessIconStyle {
+
+
+        width: 40px;
+        position: relative;
+        bottom: 0.2em;
+
+    }
+
+    .messagesMessage {
+
+        font-weight: 900;
+        color: green;
+        text-shadow: 2px 2px 2px black;
+        position: fixed;
+        bottom: 62%;
+        right: 0%;
+        text-align: center;
+        width: 100% !important;
+    }
+
     .sendStyle {
 
         width: 20px;
@@ -88,11 +109,124 @@
         transform: scale(1.2);
     }
 
+
+    @media only screen and (width: 554px) {
+
+        .messagesMessage {
+            font-size: 23px;
+            bottom: 38% !important;
+    
+        }
+      }
+
 @media only screen and (width: 400px) {
 
     .titleMessageus {
 
         font-size: 18px !important;
+      
+    }
+
+    .messagesMessage {
+
+        font-size: 20px !important;
+        bottom: 57% !important;
+        left: 2%;
+    }
+  }
+
+  @media only screen and (width: 320px) {
+
+    .titleMessageus {
+
+        font-size: 13px !important;
+      
+    }
+
+    .messagesMessage {
+
+        font-size: 16px !important;
+        bottom: 59% !important;
+        left: 2%;
+    }
+
+    .sucessIconStyle {
+
+        width: 28px;
+        bottom: 1px !important;
+
+    }
+  }
+
+
+  @media only screen and (width: 375px) {
+
+    .titleMessageus {
+
+        font-size: 15px !important;
+
+    }
+
+    .sucessIconStyle {
+
+        width: 28px;
+        bottom: 2px !important;
+
+    }
+
+    .messagesMessage {
+
+        font-size: 20px !important;
+        bottom: 59% !important;
+        left: 2%;
+    }
+    
+  }
+
+  
+  @media only screen and (width: 425px) {
+
+    .titleMessageus {
+
+        font-size: 15px !important;
+
+    }
+
+    .messagesMessage {
+
+        font-size: 20px !important;
+        bottom: 59% !important;
+        left: 2%;
+    }
+
+    .sucessIconStyle {
+
+        width: 28px;
+        bottom: 2px !important;
+
+    }
+  }
+
+
+  @media only screen and (width: 768px) {
+
+    .titleMessageus {
+
+        font-size: 15px !important;
+
+    }
+
+    .messagesMessage {
+
+        font-size: 25px !important;
+        bottom: 59% !important;
+        left: 2%;
+    }
+
+    .sucessIconStyle {
+
+        width: 35px;
+        bottom: 2px !important;
 
     }
   }

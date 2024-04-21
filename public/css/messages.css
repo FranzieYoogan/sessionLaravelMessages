@@ -12,8 +12,8 @@
   
     box-shadow: 0px 0px 4px 0px black;
     padding: 20px;
-    margin-left: 3em;
-    margin-right: 3em;
+    width: 90%;
+    margin-left: 1.5em;
     margin-bottom: 3em;
     margin-top: 3em;
     border-radius: 40px;
@@ -80,4 +80,164 @@ body::-webkit-scrollbar {
     background-color: orange;
     outline: 1px solid slategrey;
     border-left: 1px solid black;
+  }
+
+  @media only screen and (width: 400px) {
+
+    .responseBy {
+
+        font-size: 20px !important;
+      
+    }
+
+    .userIconStyle {
+
+        width: 20px;
+
+    }
+
+    .dateIconStyle  {
+
+        width: 30px;
+
+    }
+
+    .dateStyle {
+
+        font-size: 18px !important;
+        bottom: 57% !important;
+       
+    }
+  }
+
+
+  @media only screen and (width: 554px) {
+
+    .responseBy {
+
+        font-size: 30px !important;
+      
+    }
+
+    .userIconStyle {
+
+        width: 25px;
+
+    }
+
+    .dateIconStyle  {
+
+        width: 35px;
+
+    }
+
+    .dateStyle {
+
+        font-size: 30px !important;
+        bottom: 57% !important;
+        margin-left: 0em;
+    }
+  }
+
+
+  @media only screen and (width: 320px) {
+
+    .responseBy {
+
+        font-size: 15px !important;
+      
+    }
+
+    .userIconStyle {
+
+        width: 25px;
+
+    }
+
+    .dateIconStyle  {
+
+        width: 35px;
+
+    }
+
+    .dateStyle {
+
+        font-size: 16px !important;
+        bottom: 57% !important;
+        margin-left: 0.5em;
+    }
+
+    .contentMessage {
+
+        margin-left: 1em !important;
+
+    }
+  }
+
+  @media only screen and (width: 375px) {
+
+    .responseBy {
+
+        font-size: 18px !important;
+      
+    }
+
+    .userIconStyle {
+
+        width: 25px;
+
+    }
+
+    .dateIconStyle  {
+
+        width: 35px;
+
+    }
+
+    .dateStyle {
+
+        font-size: 20px !important;
+        bottom: 57% !important;
+        margin-left: 0.5em;
+    }
+
+    .contentMessage {
+
+        margin-left: 1em !important;
+
+    }
+  }
+
+  @media only screen and (width: 425px) {
+
+    .responseBy {
+
+        font-size: 20px !important;
+      
+    }
+
+    .userIconStyle {
+
+        width: 25px;
+
+    }
+
+    .dateIconStyle  {
+
+        width: 35px;
+
+    }
+
+    .dateStyle {
+
+        font-size: 20px !important;
+        bottom: 57% !important;
+        margin-left: 1.4em;
+    }
+
+    .contentMessage {
+
+        margin-left: 1em !important;
+
+    }
   }

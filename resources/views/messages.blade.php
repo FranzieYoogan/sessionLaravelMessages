@@ -37,7 +37,7 @@
           
                 <div class="contentMessage">
                   
-                    <h1>Response By {{$data->user_nickname}} <img class="userIconStyle" src="{{asset('/img/icons/user.png')}}" alt="">  <span class="dateStyle">{{substr($data->user_date,0,26)}}  <img class="dateIconStyle" src="{{asset('/img/icons/date.png')}}" alt=""> </span> </h1>
+                    <h1 class="responseBy">Response By {{$data->user_nickname}} <img class="userIconStyle" src="{{asset('/img/icons/user.png')}}" alt="">  <span class="dateStyle">{{substr($data->user_date,0,26)}}  <img class="dateIconStyle" src="{{asset('/img/icons/date.png')}}" alt=""> </span> </h1>
              
                     <h1 class="messageStyle">{{$data->user_message}}</h1>
 

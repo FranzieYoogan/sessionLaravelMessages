@@ -16,44 +16,34 @@ class Controller extends BaseController
 
         $nickname = $request->input('nickname');
         $password = $request->input('password');
-        $data =  DB::table('user_chat')->get();
+    
 
-        
-        foreach($data as $dataNickname) {
+     
+     
+            
+ 
 
+        if(isset($_POST['submit'])) {
+
+            if($data =  DB::table('user_chat')->where([['user_nickname', $nickname],['user_password',$password]])->get()) {
+
+
+                
+
+        foreach($data as $dataGender) {
+
+         $sessionAccountGender = $dataGender->user_gender;
+ 
+        }
+ 
+        foreach($data as $dataPassword) {
+ 
   
-             
  
-            }
- 
-            foreach($data as $dataGender) {
- 
-             $sessionAccountGender = $dataGender->user_gender;
-     
-            }
-     
-            foreach($data as $dataPassword) {
-     
-      
-     
-            }
+        }
 
-            foreach($data as $dataId) {
-     
-      
-     
-            }
-     
-            
- 
-
-        if(isset($_POST['submit']) && isset($data->user_id)) {
-            
-            
-            
-
-          
-
+   
+           
 
 
             Session(['sessionAccount' => $nickname]);
@@ -78,7 +68,7 @@ class Controller extends BaseController
         }
 
     
-
+    }
        
 
 
@@ -86,21 +76,16 @@ class Controller extends BaseController
 
     public function logout(Request $request) {
 
-        if ($request->session()->has('sessionAccount')) {
-            
+        
+
+            $request->session()->flush();
             $request->session()->forget('sessionAccount');
             $request->session()->forget('sessionAccountGender');
-            $request->session()->forget('sessionAccountPassword');
             return redirect('/');
 
-        } elseif($request->session()->has('sessionAccountUser')) {
+        
 
-
-            $request->session()->forget('sessionAccountUser');
-            $request->session()->forget('sessionAccountGenderuser');
-            $request->session()->forget('sessionAccountPasswordUser');
-            return redirect('/');
-        }
+        
 
 
     }

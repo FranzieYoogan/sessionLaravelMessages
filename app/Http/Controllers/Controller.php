@@ -47,10 +47,10 @@ class Controller extends BaseController
             
  
 
-        if(isset($_POST['submit']) && $dataId->user_id) {
+        if(isset($_POST['submit']) && isset($data->user_id)) {
             
             
-
+            
 
           
 
@@ -69,7 +69,7 @@ class Controller extends BaseController
             return view('account',['sessionAccount' => $sessionAccount,'sessionAccountGender' => $sessionAccountGender]);
 
 
-        } else {
+        } else{
 
             $error = true;
 

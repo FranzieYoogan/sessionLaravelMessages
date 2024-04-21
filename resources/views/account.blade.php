@@ -15,11 +15,12 @@
 
     @if(session()->has('sessionAccount'))
 
-    <h1>Welcome @php if(Session::get('sessionAccountGender') == "f") echo "Ms"; elseif(Session::get('sessionAccountGender') == "m") echo "Mr"; @endphp @php echo Session::get('sessionAccount') @endphp ^-^</h1>
+
+    <h1>Welcome @if(session()->get('sessionAccountGender') == "f")  Ms {{session()->get('sessionAccount')}} ^-^ @else Mr {{session()->get('sessionAccount')}}  ^-^ @endif</h1>
 
     @endif
 
- 
+    
 
 
 </body>

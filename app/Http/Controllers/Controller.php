@@ -26,27 +26,32 @@ class Controller extends BaseController
 
         if(isset($_POST['submit'])) {
 
-            if(DB::select("select * from user_chat where user_nickname = '$nickname' and user_password = '$password' ")) {
+            if($data = DB::select("select * from user_chat where user_nickname = '$nickname' and user_password = '$password' ")) {
+
+                foreach($data as $dataGender) {
 
 
-           
+                    $genderValue = $dataGender->user_gender;
+               
+                }
+                
 
-              
-
+                
+                $sessionAccountGender = Session('sessionAccountGender', $genderValue);    
           
 
 
 
             Session(['sessionAccount' => $nickname]);
-
-        
+            Session(['sessionAccountGender' => $genderValue]);
+            
 
             $sessionAccount = Session('sessionAccount', $nickname);
-   
-          
-           
         
-            return view('account',['sessionAccount' => $sessionAccount]);
+          
+       
+        
+            return view('account',['sessionAccount' => $sessionAccount,'sessionAccountGender' => $sessionAccountGender]);
 
 
         } else{

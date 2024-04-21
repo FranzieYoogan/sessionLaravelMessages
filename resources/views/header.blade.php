@@ -19,7 +19,7 @@
     <nav class="navbar navbar-expand-lg bg-body-tertiary">
        
 
-              @if(!session()->has('sessionAccount') && !session()->has('sessionAccountUser'))
+              @if(!session()->has('sessionAccount'))
 
               <div class="container-fluid">
                 <a class="navbar-brand" href="/"><img class="navbarIcon" src="{{asset('/img/icons/navbar.png')}}" alt=""></a>
@@ -35,7 +35,7 @@
 
               @endif
           
-              @if(session()->has('sessionAccount'))
+              @if(session()->has('sessionAccount') && session()->get('sessionAccount') == "admin01")
 
               <div class="container-fluid">
                 <a class="navbar-brand" href="/account"><img class="navbarIcon" src="{{asset('/img/icons/navbar.png')}}" alt=""></a>
@@ -58,7 +58,7 @@
               </li>
 
 
-              @elseif(session()->has('sessionAccountUser')) 
+              @elseif(session()->has('sessionAccount')) 
 
               <div class="container-fluid">
                 <a class="navbar-brand" href="/account"><img class="navbarIcon" src="{{asset('/img/icons/navbar.png')}}" alt=""></a>
@@ -73,7 +73,7 @@
               </li>
 
               <li class="nav-item">
-                <a class="nav-link" href="/account" > {{$sessionAccountUser = session('sessionAccountUser')}}</a>
+                <a class="nav-link" href="/account" > {{$sessionAccount = session('sessionAccount')}}</a>
               </li>
 
               <li class="nav-item">

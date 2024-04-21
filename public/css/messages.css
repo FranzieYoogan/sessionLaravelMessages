@@ -42,6 +42,27 @@
     font-weight: 400;
 }
 
+.dateStyle {
+
+    margin-left: 1em;
+
+}
+
+.dateIconStyle {
+
+    width: 40px;
+    position: relative;
+    bottom: 5px;
+}
+
+
+.userIconStyle {
+
+    width: 30px;
+    position: relative;
+    bottom: 3px;
+}
+
 
 
 body::-webkit-scrollbar {

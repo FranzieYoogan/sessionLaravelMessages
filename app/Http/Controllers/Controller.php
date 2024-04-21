@@ -16,82 +16,57 @@ class Controller extends BaseController
 
         $nickname = $request->input('nickname');
         $password = $request->input('password');
+        $data =  DB::table('user_chat')->get();
 
-        if(isset($_POST['submit'])) {
-            
-        $data = DB::select('select * from admin_chat');
-        $dataUser = DB::select('select * from user_chat');
-
-
+        
         foreach($data as $dataNickname) {
 
-            $dataNickname->admin_nickname;
-    
-           }
+  
+             
+ 
+            }
+ 
+            foreach($data as $dataGender) {
+ 
+             $sessionAccountGender = $dataGender->user_gender;
+     
+            }
+     
+            foreach($data as $dataPassword) {
+     
+      
+     
+            }
 
-           foreach($data as $dataGender) {
+            foreach($data as $dataId) {
+     
+      
+     
+            }
+     
+            
+ 
 
-            $sessionAccountGender = $dataGender->admin_gender;
-    
-           }
-    
-           foreach($data as $dataPassword) {
-    
-            $dataPassword->admin_password;
-    
-           }
-    
-           foreach($dataUser as $dataUserPassword) {
-    
-            $dataUserPassword->user_password;
-    
-           }
+        if(isset($_POST['submit']) && $dataId->user_id) {
+            
+            
 
-           foreach($dataUser as $dataUserGender) {
-    
-            $sessionAccountGenderuser = $dataUserGender->user_gender;
-    
-           }
-    
-           foreach($dataUser as $dataUserNickname) {
-    
-            $dataUserNickname->user_nickname;
-    
-           }
 
-           if($dataNickname->admin_nickname == $nickname && $dataPassword->admin_password == $password ) {
+          
 
 
 
             Session(['sessionAccount' => $nickname]);
+            Session(['sessionAccountPassword' => $dataPassword]);
             Session(['sessionAccountGender' => $sessionAccountGender]);
         
 
             $sessionAccount = Session('sessionAccount', $nickname);
             $sessionAccountGender = Session('sessionAccountGender', $sessionAccountGender);
-            
-            session_start();
+          
+           
         
             return view('account',['sessionAccount' => $sessionAccount,'sessionAccountGender' => $sessionAccountGender]);
-
-
-
-
-
-           } elseif($dataUserNickname->user_nickname == $nickname && $dataUserPassword->user_password == $password) {
-
-
-        
-
-           Session(['sessionAccountUser' => $nickname]);
-           Session(['sessionAccountGenderuser' => $sessionAccountGenderuser]);
-           $sessionAccountGenderuser = Session('sessionAccountGenderuser', $sessionAccountGenderuser);
-           $sessionAccountUser = Session('sessionAccountUser', $nickname);
-
-           session_start();
-
-           return view('account',['sessionAccountUser' => $sessionAccountUser,'sessionAccountGenderuser' => $sessionAccountGenderuser]);
-         
 
 
         } else {
@@ -102,7 +77,7 @@ class Controller extends BaseController
 
         }
 
-    }
+    
 
        
 
@@ -114,12 +89,16 @@ class Controller extends BaseController
         if ($request->session()->has('sessionAccount')) {
             
             $request->session()->forget('sessionAccount');
+            $request->session()->forget('sessionAccountGender');
+            $request->session()->forget('sessionAccountPassword');
             return redirect('/');
 
         } elseif($request->session()->has('sessionAccountUser')) {
 
 
             $request->session()->forget('sessionAccountUser');
+            $request->session()->forget('sessionAccountGenderuser');
+            $request->session()->forget('sessionAccountPasswordUser');
             return redirect('/');
         }
 
@@ -132,7 +111,7 @@ class Controller extends BaseController
             
            
 
-            $usersMessages = DB::select('select * from user_chat');
+            $usersMessages =  DB::table('user_chat')->get();
 
 
             return view('messages', ['usersMessages' => $usersMessages]);
@@ -148,20 +127,21 @@ class Controller extends BaseController
         $currentDate = date(DATE_RFC2822);
 
 
-        $sessionAccountUser = $request->session()->get('sessionAccountUser');
-        $sessionAccountGenderuser = $request->session()->get('sessionAccountGenderuser');
+        $sessionAccount = $request->session()->get('sessionAccount');
+        $sessionAccountGender = $request->session()->get('sessionAccountGender');
+   
 
           $valueInputOk =  addslashes($textareaInput);
 
         if(isset($_POST['submit'])) {
 
-            $query = DB::insert("insert into user_chat (user_nickname,user_gender,user_message, user_date) values ('$sessionAccountUser','$sessionAccountGenderuser','$valueInputOk', '$currentDate')");
+             DB::insert("insert into user_chat (user_nickname,user_gender,user_message, user_date) values ('$sessionAccount','$sessionAccountGender','$valueInputOk', '$currentDate')");
 
 
 
             $successful = true;
     
-            return view('messageus', ['query' => $query,'successful' => $successful]);
+            return view('messageus', ['successful' => $successful]);
 
 
         }

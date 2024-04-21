@@ -33,14 +33,14 @@
             @csrf
             <!-- Email input -->
             <div data-mdb-input-init class="form-outline mb-4">
-              <input type="text" maxlength="15" name="nickname" id="form2Example1" class="inputLogin form-control" required />
-              <label class="form-label" for="form2Example1">account's nickname</label>
+              <input type="text" maxlength="15" name="nickname" id="nickname" class="inputLogin form-control" required />
+              <label class="form-label" for="nickname">account's nickname</label>
             </div>
           
             <!-- Password input -->
             <div data-mdb-input-init class="form-outline mb-4">
-              <input type="password" maxlength="8" name="password" id="form2Example2" class="inputLogin form-control" required />
-              <label class="form-label" for="form2Example2">Password</label>
+              <input type="password" minlength="8" maxlength="8" name="password" id="password" class="inputLogin form-control" required />
+              <label class="form-label" for="password">Password</label>
             </div>
           
           

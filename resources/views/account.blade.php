@@ -19,11 +19,7 @@
 
     @endif
 
-    @if(session()->has('sessionAccountUser'))
-
-    <h1>Welcome @php if(Session::get('sessionAccountGenderuser') == "m") echo "Mr"; elseif(Session::get('sessionAccountGenderuser') == "f") echo "Ms"; @endphp @php echo Session::get('sessionAccountUser') @endphp ^-^</h1>
-
-    @endif
+ 
 
 
 </body>

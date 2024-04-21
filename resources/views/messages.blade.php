@@ -13,16 +13,19 @@
 
     @include('header')
 
- 
+    @if (isset($usersMessages))
+    @foreach ($usersMessages as $data)
 
+        @if($data->user_message)
         <section class="containerAll">
 
-            @if (isset($usersMessages))
+        
                 
     
 
-            @foreach ($usersMessages as $data)
-            @if($data->user_message)
+     
+
+       
             <div class="containerForBorder">
                 <h1 class="feddbackStyle">FEEDBACK #{{$data->user_id}}</h1>
 
@@ -34,7 +37,7 @@
           
                 <div class="contentMessage">
                   
-                    <h1>Response By {{$data->user_nickname}} </h1>
+                    <h1>Response By {{$data->user_nickname}} <img class="userIconStyle" src="{{asset('/img/icons/user.png')}}" alt="">  <span class="dateStyle">{{substr($data->user_date,0,26)}}  <img class="dateIconStyle" src="{{asset('/img/icons/date.png')}}" alt=""> </span> </h1>
              
                     <h1 class="messageStyle">{{$data->user_message}}</h1>
 
@@ -45,11 +48,12 @@
 
       
         </div>
+    
         @endif
-
             @endforeach
-          
+     
             @endif
+    
         </section>
 
 

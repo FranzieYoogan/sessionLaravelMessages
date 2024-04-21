@@ -19,7 +19,7 @@
         @if($data->user_message)
         <section class="containerAll">
 
-        
+           
                 
     
 
@@ -27,7 +27,7 @@
 
        
             <div class="containerForBorder">
-                <h1 class="feddbackStyle">FEEDBACK #{{$data->user_id}}</h1>
+                <h1 class="feddbackStyle">FEEDBACK #  {{$counter++}}</h1>
 
         
           

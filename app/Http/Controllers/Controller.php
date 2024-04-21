@@ -113,8 +113,11 @@ class Controller extends BaseController
 
             $usersMessages =  DB::table('user_chat')->get();
 
+            $counter = 1;
+            
 
-            return view('messages', ['usersMessages' => $usersMessages]);
+
+            return view('messages', ['usersMessages' => $usersMessages,'counter' => $counter]);
 
         
 

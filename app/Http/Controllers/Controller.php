@@ -18,45 +18,35 @@ class Controller extends BaseController
         $password = $request->input('password');
     
 
-     
+        
+    
      
             
  
 
         if(isset($_POST['submit'])) {
 
-            if($data =  DB::table('user_chat')->where([['user_nickname', $nickname],['user_password',$password]])->get()) {
+            if(DB::select("select * from user_chat where user_nickname = '$nickname' and user_password = '$password' ")) {
 
 
-                
-
-        foreach($data as $dataGender) {
-
-         $sessionAccountGender = $dataGender->user_gender;
- 
-        }
- 
-        foreach($data as $dataPassword) {
- 
-  
- 
-        }
-
-   
            
+
+              
+
+          
+
 
 
             Session(['sessionAccount' => $nickname]);
-            Session(['sessionAccountPassword' => $dataPassword]);
-            Session(['sessionAccountGender' => $sessionAccountGender]);
+
         
 
             $sessionAccount = Session('sessionAccount', $nickname);
-            $sessionAccountGender = Session('sessionAccountGender', $sessionAccountGender);
+   
           
            
         
-            return view('account',['sessionAccount' => $sessionAccount,'sessionAccountGender' => $sessionAccountGender]);
+            return view('account',['sessionAccount' => $sessionAccount]);
 
 
         } else{

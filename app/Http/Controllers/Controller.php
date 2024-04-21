@@ -126,7 +126,7 @@ class Controller extends BaseController
 
     }
 
-    public function showMessages(Request $request) {
+    public function showMessages() {
 
      
             
@@ -138,6 +138,14 @@ class Controller extends BaseController
             return view('messages', ['usersMessages' => $usersMessages]);
 
         
+
+
+    }
+
+    public function sendMessage(Request $request) {
+
+        $textareaInput = $request->input('textareaInput');
+
 
 
     }

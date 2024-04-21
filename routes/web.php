@@ -28,8 +28,9 @@ Route::get('/messages', function () {
     return view('messages');
 });
 
-
-
+Route::get('/messageus', function () {
+    return view('messageus');
+});
 
 
 
@@ -37,6 +38,8 @@ Route::post('/account', [Controller::class, 'login']);
 
 
 Route::post('/messages', [Controller::class, 'showMessages']);
+
+Route::post('/messageus', [Controller::class, 'sendMessage']);
 
 Route::get('/messages', [Controller::class, 'showMessages']);
 

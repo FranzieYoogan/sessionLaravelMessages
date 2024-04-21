@@ -53,7 +53,7 @@ rel="stylesheet"
           
         <div data-mdb-input-init class="form-outline">
             <label class="labelText" for="textareaInput" id="labelText">Message</label>
-            <textarea class="textInputStyle form-control" name="textareaInput" id="textareaInput" rows="4" required></textarea>
+            <textarea minlength="50" maxlength="250" class="textInputStyle form-control" name="textareaInput" id="textareaInput" rows="4" required></textarea>
 
           </div>    
 
